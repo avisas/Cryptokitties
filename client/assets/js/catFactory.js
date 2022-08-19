@@ -21,6 +21,25 @@ function headColor(color,code) {
     $('#dnabody').html(code) //This updates the body color part of the DNA that is displayed below the cat
 }
 
+function mouthBellyAndTailColor(color, code){
+    $('.cat__mouth-contour, .cat__chest_inner, .cat__tail').css('background', '#' + color)
+    $('#mouthcode').html('code: '+code);
+    $('#dnamouth').html(code)
+}
+
+function eyesColor(color, code){
+    $('.cat__eye').find('span').css('background', '#' + color)
+    $('#eyecode').html('code: '+code);
+    $('#dnaeyes').html(code)
+
+}
+
+function earsAndPawColor(color, code){
+    $('.cat__ear--left, .cat__ear--right, .cat__paw-left, .cat__paw-right, .cat__paw-left_inner, .cat__paw-right_inner').css('background', '#' + color)
+    $('#earscode').html('code: '+code);
+    $('#dnaears').html(code)
+}
+
 
 //###################################################
 //Functions below will be used later on in the project
@@ -33,6 +52,37 @@ function eyeVariation(num) {
             normalEyes()
             $('#eyeName').html('Basic')
             break
+        case 2:
+            normalEyes()
+            $('#eyeName').html('Chiller')
+            eyesType1();
+            break
+        case 3:
+            normalEyes()
+            $('#eyeName').html('Welling Up')
+            eyesType2();
+            break  
+        case 4:
+            normalEyes()
+            $('#eyeName').html('watcher')
+            eyesType3();
+            break
+        case 5:
+            normalEyes()
+            $('#eyeName').html('Looking Down left')
+            eyesType4();
+            break
+        case 6:
+            normalEyes()
+            $('#eyeName').html('Looking Down right')
+            eyesType5();
+            break
+        case 7:
+            normalEyes()
+            $('#eyeName').html('cross-eyed')
+            eyesType6();
+            break
+
     }
 }
 
@@ -48,6 +98,43 @@ function decorationVariation(num) {
 
 async function normalEyes() {
     await $('.cat__eye').find('span').css('border', 'none')
+}
+async function eyesType1() {
+    await $('.cat__eye').find('span').css('border-top', '15px solid')
+}
+
+async function eyesType2() {
+    await $('.cat__eye').find('span').css('border-bottom', '15px solid')
+}
+
+async function eyesType3() {
+    await $('.cat__eye').find('span').css('border-bottom', '15px solid')
+    await $('.cat__eye').find('span').css('border-top', '15px solid')
+}
+
+async function eyesType4() { //looking down left
+    await $('.cat__eye').find('span').css('border-top', '12px solid')
+    await $('.cat__eye').find('span').css('border-right', '12px solid')
+
+}
+
+async function eyesType5() { //looking down right
+    await $('.cat__eye').find('span').css('border-top', '12px solid')
+    await $('.cat__eye').find('span').css( 'border-left', '12px solid')
+}
+
+async function eyesType6() { //cross-eyed
+    await $('.cat__eye').find('span').css('border-left', '11px solid')
+    await $('.cat__eye').find('span').css('border-right', '12px solid')
+    await $('.cat__eye').find('.cat__eye span::before').css('top', '24px')
+    await $('.cat__eye').find('.cat__eye span::before').css('left', '4px')
+    await $('.cat__eye').find('.cat__eye span::before').css('width', '0px')
+    await $('.cat__eye').find('.cat__eye span::before').css('height', '0px')
+    await $('.cat__eye').find('.cat__eye span::after').css('top', '13px')
+    await $('.cat__eye').find('.cat__eye span::after').css('left', '8px')
+    await $('.cat__eye').find('.cat__eye span::after').css('width', '4px')
+    await $('.cat__eye').find('.cat__eye span::after').css('height', '11px')
+
 }
 
 async function normaldecoration() {
