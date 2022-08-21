@@ -106,6 +106,7 @@ body {
     border-radius: 50%;
     z-index: 200;
 }
+
 .cat__eye span::after {
     content: '';
     top: 8px;
@@ -116,6 +117,7 @@ body {
     border-radius: 50%;
     background: #fff;
 }
+/*
 .cat__eye span::before {
     content: '';
     top: 20px;
@@ -126,6 +128,7 @@ body {
     border-radius: 50%;
     background: #fff;
 }
+*/
 .cat__eye span.pupil-left {
     left: 42px;
 }

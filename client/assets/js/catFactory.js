@@ -93,6 +93,36 @@ function decorationVariation(num) {
             $('#decorationName').html('Basic')
             normaldecoration()
             break
+        case 2:
+            normaldecoration()
+            $('#decorationName').html('Long')
+            decorationType1()
+            break
+        case 3:
+            normaldecoration()
+            $('#decorationName').html('Short')
+            decorationType2()
+            break
+        case 4:
+            normaldecoration()
+            $('#decorationName').html('Thin')
+            decorationType3()
+            break
+        case 5:
+            normaldecoration()
+            $('#decorationName').html('Narrow angle')
+            decorationType4()
+            break
+        case 6:
+            normaldecoration()
+            $('#decorationName').html('Thick')
+            decorationType5()
+            break
+        case 7:
+            normaldecoration()
+            $('#decorationName').html('Inverted')
+            decorationType6()
+            break
     }
 }
 
@@ -126,15 +156,10 @@ async function eyesType5() { //looking down right
 async function eyesType6() { //cross-eyed
     await $('.cat__eye').find('span').css('border-left', '11px solid')
     await $('.cat__eye').find('span').css('border-right', '12px solid')
-    await $('.cat__eye').find('.cat__eye span::before').css('top', '24px')
-    await $('.cat__eye').find('.cat__eye span::before').css('left', '4px')
-    await $('.cat__eye').find('.cat__eye span::before').css('width', '0px')
-    await $('.cat__eye').find('.cat__eye span::before').css('height', '0px')
-    await $('.cat__eye').find('.cat__eye span::after').css('top', '13px')
-    await $('.cat__eye').find('.cat__eye span::after').css('left', '8px')
+    await $('.cat__eye').find('span::after').css('top', '17px')
+    await $('.cat__eye').find('span::after').css('left', '5px')
     await $('.cat__eye').find('.cat__eye span::after').css('width', '4px')
     await $('.cat__eye').find('.cat__eye span::after').css('height', '11px')
-
 }
 
 async function normaldecoration() {
@@ -144,3 +169,41 @@ async function normaldecoration() {
     $('.cat__head-dots_first').css({ "transform": "rotate(0deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "50% 0 50% 50%" })
     $('.cat__head-dots_second').css({ "transform": "rotate(0deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "0 50% 50% 50%" })
 }
+
+async function decorationType1(){
+    $('.cat__head-dots_first').css({ "transform": "rotate(0deg)", "height": "45px", "width": "14px", "top": "1px", "border-radius": "50% 0 50% 50%" })
+    $('.cat__head-dots').css({ "transform": "rotate(0deg)", "height": "58px", "width": "14px", "top": "1px", "border-radius": "0 0 50% 50%" })
+    $('.cat__head-dots_second').css({ "transform": "rotate(0deg)", "height": "45px", "width": "14px", "top": "1px", "border-radius": "0 50% 50% 50%" })
+}
+
+async function decorationType2() {
+    $('.cat__head-dots').css({ "transform": "rotate(0deg)", "height": "33px", "width": "14px", "top": "1px", "border-radius": "0 0 50% 50%" })
+    $('.cat__head-dots_first').css({ "transform": "rotate(0deg)", "height": "20px", "width": "14px", "top": "1px", "border-radius": "50% 0 50% 50%" })
+    $('.cat__head-dots_second').css({ "transform": "rotate(0deg)", "height": "20px", "width": "14px", "top": "1px", "border-radius": "0 50% 50% 50%" })
+}
+
+async function decorationType3() {
+    $('.cat__head-dots').css({ "transform": "rotate(0deg)", "height": "48px", "width": "7px", "top": "1px", "border-radius": "0 0 50% 50%" })
+    $('.cat__head-dots_first').css({ "transform": "rotate(0deg)", "height": "35px", "width": "7px", "top": "1px", "border-radius": "50% 0 50% 50%" })
+    $('.cat__head-dots_second').css({ "transform": "rotate(0deg)", "height": "35px", "width": "7px", "top": "1px", "border-radius": "0 50% 50% 50%" })
+}
+
+async function decorationType4() {
+    $('.cat__head-dots').css({ "transform": "rotate(0deg)", "height": "48px", "width": "14px", "top": "1px", "border-radius": "0 0 50% 50%" })
+    $('.cat__head-dots_first').css({ "transform": "rotate(-25deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "50% 0 50% 50%" })
+    $('.cat__head-dots_second').css({ "transform": "rotate(25deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "0 50% 50% 50%" })
+}
+
+async function decorationType5() {
+    $('.cat__head-dots').css({ "transform": "rotate(0deg)", "height": "48px", "width": "18px", "top": "1px", "border-radius": "0 0 50% 50%" })
+    $('.cat__head-dots_first').css({ "transform": "rotate(0deg)", "height": "35px", "width": "18px", "top": "1px", "border-radius": "50% 0 50% 50%" })
+    $('.cat__head-dots_second').css({ "transform": "rotate(0deg)", "height": "35px", "width": "18px", "top": "1px", "border-radius": "0 50% 50% 50%" })
+}
+
+async function decorationType6() {
+    $('.cat__head-dots').css({ "transform": "rotate(182deg)", "height": "48px", "width": "14px", "top": "1px", "border-radius": "0 0 50% 50%" })
+    $('.cat__head-dots_first').css({ "transform": "rotate(-11deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "50% 0 50% 50%" })
+    $('.cat__head-dots_second').css({ "transform": "rotate(11deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "0 50% 50% 50%" })
+}
+
+

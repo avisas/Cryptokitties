@@ -78,3 +78,21 @@ $('#eyeshape').change(() => {
   var shape = parseInt($('#eyeshape').val());
   eyeVariation(shape);
 })
+
+$('#decorationshape').change(() => {
+    var decoshape = parseInt($('#decorationshape').val());
+    decorationVariation(decoshape);
+})
+
+$('#middleColordeco').change(() => {
+    var middlecolor = $('#middleColordeco').val();
+    decorationMidColor(colors[middlecolor],middlecolor);
+})
+
+$('#sideColordeco').change(() => {
+    var sidecolor = $('#sideColordeco').val();
+    decorationSideColor(colors[sidecolor],sidecolor);
+})
+
+  
+
