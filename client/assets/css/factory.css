@@ -18,3 +18,20 @@
     bottom: 5px;
 
 }
+
+.buttons .btn{
+    margin: 5px
+}
+
+.btn.mint{
+    float: right;
+}
+
+.tab.kittycolors{
+    display: block;
+}
+
+.tab.attribute{
+    display: none;
+}
+

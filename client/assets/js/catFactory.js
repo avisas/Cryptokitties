@@ -220,7 +220,7 @@ function decorationSideColor(color,code) {
 
 
 function animationVariation(num) {
-    $('#dnaanimation').html(num)
+    $('#dnadanimation').html(num)
     switch (num) {
         case 1:
             animationType1()
@@ -301,4 +301,6 @@ function resetAnimation() {
     $(".cat__ear--left").removeClass("moving-Single-EarLeft");
     $(".cat__ear--right").removeClass("attentionRight");
     $(".cat__ear--left").removeClass("attentionLeft");
+    $(".cat__ear--right").removeClass("movingEarsRight");
+    $(".cat__ear--left").removeClass("movingEarsLeft");
 }
