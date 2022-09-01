@@ -25,11 +25,35 @@ contract KittyContract is IERC721 {
     }
 
     function totalSupply() external view returns (uint256 total){
-
+        return kitties.length;
     }
 
-    function name() external view returns (string memory tokenName){
-        return name;
+    function ownerOf(uint256 tokenId) external view returns (address owner){
+        return kittyIndexToOwner[tokenId];
+    }
+
+    function transfer(address to, uint256 tokenId) external{
+        require(to != address(0));
+        require(to != address(this));
+        require(_owns(msg.sender, tokenId));
+
+        _transfer(msg.sender, to, tokenId);
+    }
+
+    function _transfer(address _from, address _to, uint256 _tokenId) internal {
+        ownershipTokenCount[_to]++;
+
+        kittyIndexToOwner[_tokenId] = _to;
+
+        if(_from != address(0)) {
+            ownershipTokenCount[_from]--;
+        }
+
+        emit Transfer(_from, _to, _tokenId);
+    }
+
+    function _owns(address _claimant, uint256 _tokenId) internal view returns (bool) {
+        return kittyIndexToOwner[_tokenId] == _claimant;
     }
 
 
